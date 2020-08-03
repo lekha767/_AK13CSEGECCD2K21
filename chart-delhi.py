@@ -8,7 +8,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="airportservices-hyd"
+  database="airportservices-delhi"
 )
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM parkingstands")
@@ -39,7 +39,6 @@ mycursor.execute("SELECT * FROM arrivalbaggagebelt")
 records6 = mycursor.fetchall()
 len7 =  len(records6)
 label = ['Arrival Baggage Belt','Boarding Gates','Currency Exchange','Information Desk','Luggage Storage','Parking Stands','Trolleys']
-
 fig = make_subplots(rows=1, cols=2, specs=[[{"type": "bar"}, {"type": "pie"}]], subplot_titles=['Bar Chart', 'Pie Chart'])
 trace1=go.Bar(
     x=label,
@@ -56,4 +55,4 @@ fig.add_trace(trace2,row=1, col=2)
 
 fig.update_layout(title='Service Consumption', xaxis={'title':'Service name'},
     yaxis={'title':'Units of Comsumption'})
-plotly.offline.plot(fig, filename='C:\\xampp\\htdocs\\Project\\hyddbchart.html',validate=False)
+plotly.offline.plot(fig, filename='C:\\xampp\\htdocs\\Project\\delhidbchart.html',validate=False)

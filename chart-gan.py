@@ -8,7 +8,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="airportservices-hyd"
+  database="airportservices-gan"
 )
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM parkingstands")
@@ -56,4 +56,4 @@ fig.add_trace(trace2,row=1, col=2)
 
 fig.update_layout(title='Service Consumption', xaxis={'title':'Service name'},
     yaxis={'title':'Units of Comsumption'})
-plotly.offline.plot(fig, filename='C:\\xampp\\htdocs\\Project\\hyddbchart.html',validate=False)
+plotly.offline.plot(fig, filename='C:\\xampp\\htdocs\\Project\\gandbchart.html',validate=False)
